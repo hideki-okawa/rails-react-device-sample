@@ -35,8 +35,9 @@ const App: React.FC = () => {
 	// 確認できた場合はそのユーザーの情報を取得
 	const handleGetCurrentUser = async () => {
 		try {
+			// 認証済みユーザーの作成
 			const res = await getCurrentUser();
-
+			// 認証済みユーザーが居ることの確認
 			if (res?.data.isLogin === true) {
 				setIsSignedIn(true);
 				setCurrentUser(res?.data.data);
@@ -53,6 +54,7 @@ const App: React.FC = () => {
 	};
 
 	useEffect(() => {
+		// 認証済みユーザーの取得
 		handleGetCurrentUser();
 	}, [setCurrentUser]);
 
@@ -86,6 +88,7 @@ const App: React.FC = () => {
 					<Switch>
 						<Route exact path="/signup" component={SignUp} />
 						<Route exact path="/signin" component={SignIn} />
+						{/* 未認証なら /singin にリダイレクトする */}
 						<Private>
 							<Route exact path="/" component={Home} />
 						</Private>
