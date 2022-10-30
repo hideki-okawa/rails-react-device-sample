@@ -1,5 +1,5 @@
 ## 実行
 
 ```
-$ rails s
+$ docker-compose up
 ```
