@@ -74,6 +74,7 @@ const App: React.FC = () => {
 
 	return (
 		<Router>
+			{/* グローバルで使う変数を持つ AuthContext で囲む */}
 			<AuthContext.Provider
 				value={{
 					loading,

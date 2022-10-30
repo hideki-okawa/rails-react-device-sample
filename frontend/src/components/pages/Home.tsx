@@ -4,6 +4,7 @@ import { AuthContext } from "App";
 
 // とりあえず認証済みユーザーの名前やメールアドレスを表示
 const Home: React.FC = () => {
+	// 利用する値だけAuthContextだけ記述する
 	const { isSignedIn, currentUser } = useContext(AuthContext);
 
 	return (
